@@ -1,18 +1,14 @@
+import React, { useState } from 'react';
 
-import React from "react";
-import './../styles/App.css';
-import { useState } from 'react';
-import tabs from './Tabs';
-const App = () => {
-   const [activeTab, setActiveTab] = useState(0);
+const Tabs = ({ tabs }) => {
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
+
   return (
     <div>
-        {/* Do not remove the main div */}
-         <div>
       <ul>
         {tabs.map((tab, index) => (
           <li
@@ -26,8 +22,7 @@ const App = () => {
       </ul>
       <div>{tabs[activeTab].content}</div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default App
+export default Tabs;
